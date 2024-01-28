@@ -22,7 +22,7 @@ cp -r module/* output/.temp/
 cp callbacks.lua output/.temp/
 
 cd output/.temp
-package="$(awk -F= '/name/ {print $2}' module.prop)(release).zip"
+package="$(awk -F= '/name/ {print $2}' module.prop)-(fas-rs-extension).zip"
 rm -f "../$package"
 zip -9 -rq "../$package" .
 echo Module packaged: $(realpath "../package")

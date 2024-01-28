@@ -79,7 +79,7 @@
 -- Called when the cpu controller exits the control state.
 --
 -- Extra: Lua code outside the function will be
--- executed when the plug-in is loaded, if you need to
+-- executed when the extension is loaded, if you need to
 -- execute initialization content, this is convenient.
 --
 
