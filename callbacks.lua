@@ -3,13 +3,13 @@
 -- 该枚举对应的lua函数
 -- 在 fas-rs 中将被 fas-rs 回调
 -- pub enum CallBacks {
--- LoadFas(pid_t), --------> function load_fas(pid)
--- UnloadFas(pid_t), ------> function unload_fas(pid)
--- StartFas, --------------> function start_fas()
--- StopFas, ---------------> function stop_fas()
--- InitCpuFreq, -----------> function init_cpu_freq()
--- WriteCpuFreq(usize), ---> function write_cpu_freq(freq)
--- ResetCpuFreq, ----------> function reset_cpu_freq()
+--  LoadFas(pid_t), --------> function load_fas(pid)
+--  UnloadFas(pid_t), ------> function unload_fas(pid)
+--  StartFas, --------------> function start_fas()
+--  StopFas, ---------------> function stop_fas()
+--  InitCpuFreq, -----------> function init_cpu_freq()
+--  WriteCpuFreq(usize), ---> function write_cpu_freq(freq)
+--  ResetCpuFreq, ----------> function reset_cpu_freq()
 -- }
 --
 -- function load_fas(pid):
@@ -45,13 +45,13 @@
 -- The lua function corresponding to this enumeration
 -- in fas-rs will be called back by fas-rs
 -- pub enum CallBacks {
---    LoadFas(pid_t), --------> function load_fas(pid)
---    UnloadFas(pid_t), ------> function unload_fas(pid)
---    StartFas, --------------> function start_fas()
---    StopFas, ---------------> function stop_fas()
---    InitCpuFreq, -----------> function init_cpu_freq()
---    WriteCpuFreq(usize), ---> function write_cpu_freq(freq)
---    ResetCpuFreq, ----------> function reset_cpu_freq()
+--  LoadFas(pid_t), --------> function load_fas(pid)
+--  UnloadFas(pid_t), ------> function unload_fas(pid)
+--  StartFas, --------------> function start_fas()
+--  StopFas, ---------------> function stop_fas()
+--  InitCpuFreq, -----------> function init_cpu_freq()
+--  WriteCpuFreq(usize), ---> function write_cpu_freq(freq)
+--  ResetCpuFreq, ----------> function reset_cpu_freq()
 -- }
 --
 -- function load_fas(pid):
