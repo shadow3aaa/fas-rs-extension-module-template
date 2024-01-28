@@ -83,7 +83,7 @@
 -- execute initialization content, this is convenient.
 --
 
-log_debug("hello world") -- Initial
+log_info("hello world") -- Initial
 
 function start_fas() -- A example for callback functions
     log_info("fas started")
