@@ -12,7 +12,8 @@
 --  ResetCpuFreq, ----------> function reset_cpu_freq()
 -- }
 --
--- function load_fas(pid):
+-- 可注册的函数说明:
+-- function load_fas(pid)
 -- 当 fas-rs 加载到目标游戏时调用，
 -- 参数为目标应用程序的pid。
 --
@@ -39,6 +40,17 @@
 -- 附加: 在函数外的lua代码会在插件加载时被执行，
 -- 如果你有执行初始化内容的需求，这样做很方便。
 --
+-- fas-rs提供的函数:
+-- log_info("message")
+-- 打印一个info等级日志到/sdcard/Android/fas-rs/fas_log.txt
+--
+-- log_error("message")
+-- 打印一个error等级日志到/sdcard/Android/fas-rs/fas_log.txt
+--
+-- log_debug("message")
+-- 打印一个debug等级日志到/sdcard/Android/fas-rs/fas_log.txt，
+-- 此等级在fas-rs的release build不开启
+--
 -- ------------------------------------
 --
 -- EN:
@@ -54,7 +66,8 @@
 --  ResetCpuFreq, ----------> function reset_cpu_freq()
 -- }
 --
--- function load_fas(pid):
+-- Registerable function description:
+-- function load_fas(pid)
 -- Called when fas-rs is loaded into the target game,
 -- the parameter is the pid of the target application.
 --
@@ -81,6 +94,17 @@
 -- Extra: Lua code outside the function will be
 -- executed when the extension is loaded, if you need to
 -- execute initialization content, this is convenient.
+--
+-- Functions provided by fas-rs:
+-- log_info("message")
+-- Print an info level log to /sdcard/Android/fas-rs/fas_log.txt
+--
+-- log_error("message")
+-- Print an error level log to /sdcard/Android/fas-rs/fas_log.txt
+--
+-- log_debug("message")
+-- Print a debug level log to /sdcard/Android/fas-rs/fas_log.txt,
+-- This level is not enabled in the release build of fas-rs.
 --
 
 log_info("hello world") -- Initial
