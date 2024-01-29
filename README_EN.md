@@ -22,7 +22,7 @@
   - There are the following reasons:
   - The ID of the module is unique, so conflicts caused by duplicate names of extensions are avoided
   - Convenient for users to manage extensions
-  - Easy to do dependency checking, e.g. templates refuse to install/automatically uninstall themselves when `fas-rs` is not installed
+  - Easy to do dependency checking, e.g. templates refuse to be installed.
 
 - Is it possible to create a extension in other ways/What is the most basic way to register a extension?
   - Copy the lua script with the suffix `.lua` to the `/dev/fas_rs/extensions` folder (when it appears) with the same requirements as the documentation and [callbacks.lua](callbacks.lua).
