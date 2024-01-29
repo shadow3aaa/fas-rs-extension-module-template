@@ -16,11 +16,6 @@
 MODDIR=${0%/*}
 EXTENSIONS=/dev/fas_rs/extensions
 
-if [ "$(getprop fas-rs-installed)" = "" ]; then
-	touch $MODDIR/remove
-	exit
-fi
-
 until [ -d $EXTENSIONS ]; do
 	sleep 1s
 done
