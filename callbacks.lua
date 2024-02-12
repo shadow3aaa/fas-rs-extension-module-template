@@ -8,7 +8,6 @@
 --  StartFas, --------------> function start_fas()
 --  StopFas, ---------------> function stop_fas()
 --  InitCpuFreq, -----------> function init_cpu_freq()
---  WriteCpuFreq(usize), ---> function write_cpu_freq(freq)
 --  ResetCpuFreq, ----------> function reset_cpu_freq()
 -- }
 --
@@ -29,10 +28,6 @@
 --
 -- function init_cpu_freq()
 -- 当cpu控制器进入控制状态时调用。
---
--- function write_cpu_freq(freq)
--- 当cpu控制器写入cpu频率时调用，
--- 参数是正在写入的频率。
 --
 -- function reset_cpu_freq()
 -- 当cpu控制器退出控制状态时调用。
@@ -62,7 +57,6 @@
 --  StartFas, --------------> function start_fas()
 --  StopFas, ---------------> function stop_fas()
 --  InitCpuFreq, -----------> function init_cpu_freq()
---  WriteCpuFreq(usize), ---> function write_cpu_freq(freq)
 --  ResetCpuFreq, ----------> function reset_cpu_freq()
 -- }
 --
@@ -84,10 +78,6 @@
 -- function init_cpu_freq()
 -- Called when the cpu controller enters the control state.
 --
--- function write_cpu_freq(freq)
--- Called when the cpu controller writes the cpu frequency,
--- the parameter is the frequency being written.
--- 
 -- function reset_cpu_freq()
 -- Called when the cpu controller exits the control state.
 --
@@ -106,7 +96,6 @@
 -- Print a debug level log to /sdcard/Android/fas-rs/fas_log.txt,
 -- This level is not enabled in the release build of fas-rs.
 --
-
 log_info("hello world") -- Initial
 
 function start_fas() -- A example for callback functions
