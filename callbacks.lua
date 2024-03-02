@@ -3,22 +3,22 @@
 -- 该枚举对应的lua函数
 -- 在 fas-rs 中将被 fas-rs 回调
 -- pub enum CallBacks {
---  LoadFas(pid_t), --------> function load_fas(pid)
---  UnloadFas(pid_t), ------> function unload_fas(pid)
---  StartFas, --------------> function start_fas()
---  StopFas, ---------------> function stop_fas()
---  InitCpuFreq, -----------> function init_cpu_freq()
---  ResetCpuFreq, ----------> function reset_cpu_freq()
+--  LoadFas(pid_t, String), --------> function load_fas(pid, pkg)
+--  UnloadFas(pid_t, String), ------> function unload_fas(pid, pkg)
+--  StartFas, ----------------------> function start_fas()
+--  StopFas, -----------------------> function stop_fas()
+--  InitCpuFreq, -------------------> function init_cpu_freq()
+--  ResetCpuFreq, ------------------> function reset_cpu_freq()
 -- }
 --
 -- 可注册的函数说明:
--- function load_fas(pid)
+-- function load_fas(pid, pkg)
 -- 当 fas-rs 加载到目标游戏时调用，
--- 参数为目标应用程序的pid。
+-- 参数为目标应用程序的pid和包名
 --
--- function unload_fas(pid)
+-- function unload_fas(pid, pkg)
 -- 当 fas-rs 卸载到目标游戏时调用，
--- 参数为目标应用程序的pid。
+-- 参数为目标应用程序的pid和包名
 --
 -- function start_fas()
 -- 切换到fas-rs工作状态时调用。
@@ -52,22 +52,22 @@
 -- The lua function corresponding to this enumeration
 -- in fas-rs will be called back by fas-rs
 -- pub enum CallBacks {
---  LoadFas(pid_t), --------> function load_fas(pid)
---  UnloadFas(pid_t), ------> function unload_fas(pid)
---  StartFas, --------------> function start_fas()
---  StopFas, ---------------> function stop_fas()
---  InitCpuFreq, -----------> function init_cpu_freq()
---  ResetCpuFreq, ----------> function reset_cpu_freq()
+--  LoadFas(pid_t, String), --------> function load_fas(pid, pkg)
+--  UnloadFas(pid_t, String), ------> function unload_fas(pid, pkg)
+--  StartFas, ----------------------> function start_fas()
+--  StopFas, -----------------------> function stop_fas()
+--  InitCpuFreq, -------------------> function init_cpu_freq()
+--  ResetCpuFreq, ------------------> function reset_cpu_freq()
 -- }
 --
 -- Registerable function description:
--- function load_fas(pid)
+-- function load_fas(pid, pkg)
 -- Called when fas-rs is loaded into the target game,
--- the parameter is the pid of the target application.
+-- The parameters are the pid and package name of the target application
 --
--- function unload_fas(pid)
--- Called when fas-rs is unloaded into the target game,
--- the parameter is the pid of the target application.
+-- function unload_fas(pid, pkg)
+-- Called when fas-rs is unloaded to the target game,
+-- The parameters are the pid and package name of the target application
 --
 -- function start_fas()
 -- Called when switching to fas-rs working state.
