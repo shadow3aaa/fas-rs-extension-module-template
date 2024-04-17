@@ -13,8 +13,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+LOCALE=$(getprop persist.sys.locale)
+
+local_print() {
+	if [ $LOCALE = zh-CN ]; then
+		ui_print "$1"
+	else
+		ui_print "$2"
+	fi
+}
+
 if [ "$(getprop fas-rs-installed)" = "" ]; then
-	ui_print "Please install fas-rs first"
-	ui_print "请先安装fas-rs再安装此插件"
+	local_print "请先安装fas-rs再安装此插件" "Please install fas-rs first"
 	abort
 fi
