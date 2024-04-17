@@ -7,6 +7,15 @@
 - 本仓库是项目[`fas-rs`](https://github.com/shadow3aaa/fas-rs)的插件系统的模板仓库
 - 本仓库同时也是一个`magisk/ksu`模块的模板仓库，这是因为`fas-rs`插件推荐以独立模块的形式存在
 
+## **API**
+
+- 插件脚本是自文档化的，查看对应版本的`callbacks.lua`以获取API说明
+- `fas-rs` 致力于保持向后兼容性。也就是说，即使更新的`fas-rs`发生了插件API更新，老的插件也依然能正常工作
+
+| 插件api | 最小fas-rs版本 |
+| --- | --- |
+| v0(不声明api版本时的默认) | v2.3.0 |
+
 ## **使用**
 
 - `magisk/ksu`模块的标准可参考[magisk官方说明](https://magisk.readthedocs.io/en/latest/developers/guides.html)，本仓库的模块模板开箱即用，如无特殊需求修改模块名和[callbacks.lua](callbacks.lua)即可
@@ -18,7 +27,7 @@
 
 ## **FAQ**
 
-- 为什么推荐以`magisk/ksu`的形式开发插件？
+- 为什么推荐以`magisk/ksu`模块的形式开发插件？
   - 有以下原因:
   - 模块的id是唯一的，因此避免了插件重名导致的相互冲突
   - 方便用户管理插件
