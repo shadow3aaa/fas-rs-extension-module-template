@@ -21,4 +21,4 @@ until [ -d $EXTENSIONS ]; do
 done
 
 id=$(awk -F= '/id/ {print $2}' $MODDIR/module.prop)
-cp -f $MODDIR/callbacks.lua $EXTENSIONS/${id}.lua
+cp -f $MODDIR/main.lua $EXTENSIONS/${id}.lua
