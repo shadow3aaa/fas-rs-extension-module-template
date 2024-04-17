@@ -1,3 +1,6 @@
+-- fas-rs 使用它来提供指定版本的api
+-- fas-rs use this to provide version-specified api
+API_VERSION = 0
 --
 -- 中文:
 -- 该枚举对应的lua函数
