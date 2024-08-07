@@ -61,7 +61,7 @@ API_VERSION = 2
 -- EN:
 -- The lua function corresponding to this enumeration
 -- in fas-rs will be called back by fas-rs
--- pub enum CallBacks {
+-- pub enum Api {
 --  LoadFas(pid_t, String), --------> function load_fas(pid, pkg)
 --  UnloadFas(pid_t, String), ------> function unload_fas(pid, pkg)
 --  StartFas, ----------------------> function start_fas()
