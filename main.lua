@@ -1,17 +1,18 @@
 -- fas-rs 使用它来提供指定版本的api
 -- fas-rs use this to provide version-specified api
-API_VERSION = 1
+API_VERSION = 2
 --
 -- 中文:
 -- 该枚举对应的lua函数
 -- 在 fas-rs 中将被 fas-rs 回调
--- pub enum CallBacks {
+-- pub enum Api {
 --  LoadFas(pid_t, String), --------> function load_fas(pid, pkg)
 --  UnloadFas(pid_t, String), ------> function unload_fas(pid, pkg)
 --  StartFas, ----------------------> function start_fas()
 --  StopFas, -----------------------> function stop_fas()
 --  InitCpuFreq, -------------------> function init_cpu_freq()
 --  ResetCpuFreq, ------------------> function reset_cpu_freq()
+--  TargetFpsChange(u32, String) ---> function target_fps_change(target_fps, pkg)
 -- }
 --
 -- 可注册的函数说明:
@@ -34,6 +35,9 @@ API_VERSION = 1
 --
 -- function reset_cpu_freq()
 -- 当cpu控制器退出控制状态时调用。
+--
+-- target_fps_change(target_fps, pkg)
+-- 当fas目标帧率改变时调用
 --
 -- 附加: 在函数外的lua代码会在插件加载时被执行，
 -- 如果你有执行初始化内容的需求，这样做很方便。
@@ -64,6 +68,7 @@ API_VERSION = 1
 --  StopFas, -----------------------> function stop_fas()
 --  InitCpuFreq, -------------------> function init_cpu_freq()
 --  ResetCpuFreq, ------------------> function reset_cpu_freq()
+--  TargetFpsChange(u32, String) ---> function target_fps_change(target_fps, pkg)
 -- }
 --
 -- Registerable function description:
@@ -86,6 +91,9 @@ API_VERSION = 1
 --
 -- function reset_cpu_freq()
 -- Called when the cpu controller exits the control state.
+--
+-- target_fps_change(target_fps, pkg)
+-- Called when target fps changes.
 --
 -- Extra: Lua code outside the function will be
 -- executed when the extension is loaded, if you need to
