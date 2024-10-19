@@ -1,6 +1,6 @@
 -- fas-rs 使用它来提供指定版本的api
 -- fas-rs use this to provide version-specified api
-API_VERSION = 2
+API_VERSION = 3
 --
 -- 中文:
 -- 该枚举对应的lua函数
@@ -55,6 +55,9 @@ API_VERSION = 2
 --
 -- set_policy_freq_offset(policy, offset)
 -- 设置指定集群的fas频率偏移量，可为负数
+--
+-- set_ignore_policy(policy, val)
+-- 设置是否对指定集群开启fas频率控制，val为bool
 --
 -- ------------------------------------
 --
@@ -112,6 +115,9 @@ API_VERSION = 2
 --
 -- set_policy_freq_offset(policy, offset)
 -- Sets the FAS frequency offset for the specified cluster, which can be a negative number.
+--
+-- set_ignore_policy(policy, val)
+-- Sets whether to enable FAS frequency control for the specified cluster, val is a bool.
 --
 log_info("hello world") -- Initial
 
