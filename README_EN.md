@@ -26,7 +26,7 @@
 - The code that the extension is actually called by fas-rs should be all written in [main.lua](main.lua).
 - [main.lua](main.lua) is self-documented and contains instructions on how to write extension scripts.
 - Remember to change module/module.prop to change the module name > module id
-- Run bash ./package.sh to package the module, which is located in the output folder after packaging.
+- Run python ./package.py to package the module, which is located in the output folder after packaging.
 - ps: You can check the output of```getprop fas-rs-installed```to confirm if the user has installed `fas-rs`.
 
 ## **FAQ**
