@@ -1,6 +1,6 @@
 -- fas-rs 使用它来提供指定版本的api
 -- fas-rs use this to provide version-specified api
-API_VERSION = 3
+API_VERSION = 4
 --
 -- 中文:
 -- 该枚举对应的lua函数
@@ -53,8 +53,16 @@ API_VERSION = 3
 -- 打印一个debug等级日志到/sdcard/Android/fas-rs/fas_log.txt，
 -- 此等级在fas-rs的release build不开启
 --
--- set_policy_freq_offset(policy, offset)
--- 设置指定集群的fas频率偏移量，可为负数
+-- set_extra_policy_abs(policy, min_freq, max_freq)
+-- 设置指定集群的频率范围(频率为绝对值)限制，min_freq和max_freq为频率值，单位khz
+--
+-- set_extra_policy_rel(policy, target_policy, min_freq, max_freq)
+-- 设置指定集群的频率范围(频率为相对值)限制，target_policy为相对值的目标集群，
+-- min_freq和max_freq为相对频率值(范围计算方式:目标集群频率 + min_freq <= 指定集群频率 <= 目标集群频率 + max_freq)，单位khz
+--
+-- remove_extra_policy(policy)
+-- 移除指定集群的额外频率限制(由set_extra_policy_abs或set_extra_policy_rel设置)
+-- 注意游戏退出后限制不会自动移除，因此你应该在unload_fas回调中手动移除限制
 --
 -- set_ignore_policy(policy, val)
 -- 设置是否对指定集群开启fas频率控制，val为bool
@@ -115,6 +123,20 @@ API_VERSION = 3
 --
 -- set_policy_freq_offset(policy, offset)
 -- Sets the FAS frequency offset for the specified cluster, which can be a negative number.
+--
+-- set_extra_policy_abs(policy, min_freq, max_freq)
+-- Sets the frequency range limit (frequency is an absolute value) for the specified cluster,
+-- min_freq and max_freq are frequency values, in khz
+--
+-- set_extra_policy_rel(policy, target_policy, min_freq, max_freq)
+-- Sets the frequency range limit (frequency is a relative value) for the specified cluster,
+-- target_policy is the target cluster of the relative value, min_freq and max_freq are relative frequency values,
+-- (range calculation method: target cluster frequency + min_freq <= specified cluster frequency <= target cluster frequency + max_freq),
+-- in khz
+--
+-- remove_extra_policy(policy)
+-- Removes the extra frequency limit (set by set_extra_policy_abs or set_extra_policy_rel) for the specified cluster
+-- Note that the limit will not be automatically removed after the game exits, so you should manually remove the limit in the unload_fas callback
 --
 -- set_ignore_policy(policy, val)
 -- Sets whether to enable FAS frequency control for the specified cluster, val is a bool.
